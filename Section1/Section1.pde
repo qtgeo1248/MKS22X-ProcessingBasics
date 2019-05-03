@@ -10,11 +10,11 @@ class Visualizer {
   float x, y;
   float[] values;
   float[] speeds;
-  Visualizer(float x, float y) {
+  Visualizer(float x, float y, int numElements) {
     this.x = x;
     this.y = y;
-    values = new float[10];
-    speeds = new float[10];
+    values = new float[numElements];
+    speeds = new float[numElements];
     for (int i = 0; i < values.length; i++) {
       values[i] = random(-99, 99);
       speeds[i] = random(2);
@@ -58,10 +58,8 @@ class Visualizer {
     for (int i = 0; i < values.length; i++) {
       values[i] += speeds[i]; //the speed updates the values. Do not touch this.
       //??? keep them values between max/min value so they stay in the box.
-      if (values[i] == 100) {
-        
-      } else {
-        
+      if (values[i] >= MAX_VALUE || values[i] <= MIN_VALUE) {
+        speeds[i] = -1 * speeds[i];
       }
       //??? reverse the speeds so the bar oscillates up/down when it reaches max/min
     }
@@ -70,7 +68,7 @@ class Visualizer {
 
 void setup() {
   size(600, 500);
-  v = new Visualizer(20, 20);
+  v = new Visualizer(20, 20, 10);
 }
 void draw() {
   background(255);
