@@ -42,7 +42,8 @@ class Visualizer {
     //THESE ARE WRONG: They just illustrate how they could look
     for (int i = 0; i < values.length; i++) {
       if (values[i] >= 0) {
-        
+        fill(0, 255, 0);
+        rect(x + i * 40, y + 100 - values[i], 20, values[i]);
       } else {
         
       }
