@@ -8,8 +8,8 @@ Visualizer v;
  */
 class Visualizer {
   float x, y;
-  float [] values;
-  float [] speeds;
+  float[] values;
+  float[] speeds;
   Visualizer(float x, float y) {
     this.x = x;
     this.y = y;
@@ -31,7 +31,7 @@ class Visualizer {
     //The width of the visualizer is 400! This rect is the border
 
     //the line is the 0 y-value, the top is 100, the bottom is -100
-    line(x, y+100, x+400, y+100);
+    line(x, y + 100, x + 400, y + 100);
 
     //You need to use a loop. You need to make the HEIGHT of the bars 
     //the values in the array.
@@ -45,7 +45,8 @@ class Visualizer {
         fill(0, 255, 0);
         rect(x + i * 40, y + 100 - values[i], 20, values[i]);
       } else {
-        
+        fill(255, 0, 0);
+        rect(x + i * 40, y + 100 - values[i], 20, values[i]);
       }
     }
 
