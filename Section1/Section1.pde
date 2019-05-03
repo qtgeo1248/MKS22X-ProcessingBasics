@@ -32,6 +32,7 @@ class Visualizer {
 
     //the line is the 0 y-value, the top is 100, the bottom is -100
     line(x, y + 100, x + 400, y + 100);
+    int barLength = 400 / values.length;
 
     //You need to use a loop. You need to make the HEIGHT of the bars 
     //the values in the array.
@@ -43,10 +44,10 @@ class Visualizer {
     for (int i = 0; i < values.length; i++) {
       if (values[i] >= 0) {
         fill(0, 255, 0);
-        rect(x + i * 40, y + 100 - values[i], 20, values[i]);
+        rect(x + i * barLength, y + 100 - values[i], barLength, values[i]);
       } else {
         fill(255, 0, 0);
-        rect(x + i * 40, y + 100 - values[i], 20, values[i]);
+        rect(x + i * barLength, y + 100 - values[i], barLength, values[i]);
       }
     }
 
@@ -68,7 +69,7 @@ class Visualizer {
 
 void setup() {
   size(600, 500);
-  v = new Visualizer(20, 20, 10);
+  v = new Visualizer(20, 20, 20);
 }
 void draw() {
   background(255);
