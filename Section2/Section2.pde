@@ -26,9 +26,15 @@ void gasket(int levels, float v1x, float v1y, float v2x, float v2y, float v3x, f
   }
 }
 
-void koch(int levels, float x1, float y1, float x2, float y2) {
+void koch(int levels, float x1, float y1, float x2, float y2) { //x1 and y1 is on the left
   fill(255, 255, 255);
   line(x1, y1, x2, y2);
+  if (levels >= 1) {
+    float leftX1 = 2 * x1 / 3 + x2 / 3;
+    float leftY1 = 2 * y1 / 3 + y2 / 3;
+    float rightX2 = x1 / 3 + 2 * x2 / 3;
+    float rigthY2 = y1 / 3 + 2 * y2 / 3;
+  }
 }
 
 void draw() { 
