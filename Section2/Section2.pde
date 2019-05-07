@@ -52,7 +52,7 @@ void draw() {
 
   gasket(levels, 0, height-10, width, height-10, width/2, 10);
 
-  //koch(levels, width - 10, height / 2, 10, height / 2); 
+  koch(levels, width - 10, height / 2, 10, height / 2); 
 }
 
 void mouseClicked() { 
